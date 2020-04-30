@@ -1,2 +1,2 @@
-# algorithms_princeton
-Algorithms I&amp;II by Princeton University
+# Algorithms 
+Algorithms I &amp; II course offered by Princeton University
