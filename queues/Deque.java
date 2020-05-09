@@ -36,7 +36,8 @@ public class Deque<Item> implements Iterable<Item> {
 
     // add the item to the front
     public void addFirst(Item item) {
-        if (n==0) {
+        validateEmpty(item);
+        if (n == 0) {
             first = new Node();
             first.item = item;
             first.next = null;
@@ -52,7 +53,8 @@ public class Deque<Item> implements Iterable<Item> {
 
     // add the item to the back
     public void addLast(Item item) {
-        if (n==0) {
+        validateEmpty(item);
+        if (n == 0) {
             first = new Node();
             first.item = item;
             first.next = null;
@@ -62,7 +64,7 @@ public class Deque<Item> implements Iterable<Item> {
 
         Node temp = first;
 
-        while(temp.next!=null) {
+        while (temp.next != null) {
             temp = temp.next;
         }
         Node t = new Node();
@@ -85,8 +87,7 @@ public class Deque<Item> implements Iterable<Item> {
     public Item removeLast() {
         if (isEmpty()) throw new NoSuchElementException("Not possible");
         Node temp = first;
-        while (temp.next.next!=null) {
-            //System.out.println(temp.item);
+        while (temp.next.next != null) {
             temp = temp.next;
         }
         Item item = temp.next.item;
@@ -125,8 +126,8 @@ public class Deque<Item> implements Iterable<Item> {
         dq.addLast(5);
 
 
-        //System.out.println(dq.size());
-        //System.out.println(dq.isEmpty());
+        System.out.println(dq.size());
+        System.out.println(dq.isEmpty());
 
         for (Integer item: dq) {
             System.out.println(item);
@@ -135,6 +136,7 @@ public class Deque<Item> implements Iterable<Item> {
         System.out.println(dq.size());
         System.out.println(dq.removeLast());
         System.out.println(dq.size());
+        System.out.println(dq.removeFirst());
     }
 
 }
